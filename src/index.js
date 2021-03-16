@@ -1,12 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
+import './index.css';
 import reportWebVitals from './reportWebVitals';
+import { FirebaseAuthProvider } from '@react-firebase/auth';
+// This import loads the firebase namespace along with all its type information.
+import firebase from 'firebase/app';
+
+// These imports load individual services into the firebase namespace.
+import 'firebase/auth';
+import 'firebase/database';
+import 'firebase/firestore';
+
+import { firebaseConfig } from './firebaseConfig.js';
+
+firebase.initializeApp(firebaseConfig);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <FirebaseAuthProvider {...firebaseConfig} firebase={firebase}>
+      <App />
+    </FirebaseAuthProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
