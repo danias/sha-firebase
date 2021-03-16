@@ -3,7 +3,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Realtime Database Rules
-`
+```
 {
   "rules": {
     ".read": "auth.token.email.endsWith('@bitloops.com')",
@@ -16,10 +16,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
     }
   }
 }
-`
+```
 
 ## Firestore Rules
-`
+```
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
@@ -34,7 +34,7 @@ service cloud.firestore {
     // }
   }
 }
-`
+```
 
 ## Available Scripts
 
